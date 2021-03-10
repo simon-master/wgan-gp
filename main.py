@@ -71,9 +71,6 @@ if __name__ == '__main__':
             generated_outputs = generator(train_noisy, z)
             train_batch_noise_ = torch.cat((generated_outputs, train_noisy), dim=1)
             train_batch_noise = Variable(train_batch_noise_)
-            train_batch_clean_ = torch.cat((train_clean, train_noisy), dim=1)
-            train_batch_clean = Variable(train_batch_clean_)
-            
             
             for k in range(5):
                 discriminator.zero_grad()
